@@ -7,11 +7,11 @@ ALFAESP {ESPECIAIS}*{ALFANUM}+
 
 %%
 
-(({ALFANUM}+{ALFAESP}*)@({ALFANUM}+{ALFAESP}*)?) {
+(({ALFANUM}+{ALFAESP}*)@({ALFANUM}+{ALFAESP}*)) {
   printf("%s\n", yytext);
 }
 
-(({ALFANUM}+{ALFAESP}*)@({ALFANUM}+{ALFAESP}*)[.]?) {
+(({ALFANUM}+{ALFAESP}*)@({ALFANUM}+{ALFAESP}*)[.]) {
   *(yytext + yyleng - 1) = '\0';
   printf("%s\n", yytext);
 }
